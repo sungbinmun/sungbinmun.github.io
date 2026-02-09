@@ -19,8 +19,8 @@
 
     <!-- Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <script src="./js/bulma_toggle.js"></script>
+    <link rel="stylesheet" href="./css/styles.css?v=20260209-1" />
+    <script src="./js/bulma_toggle.js?v=20260209-1"></script>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/5fd1dd8417.js" crossorigin="anonymous"></script>
@@ -312,30 +312,30 @@
                   Generalization in Reinforcement Learning
                 </h2>
               </div>
-              <div class="generalization-grid">
-                <div class="generalization-column">
-                  <div class="generalization-heading">In-distribution</div>
-                  <div class="generalization-pairs">
+              <div style="display: flex; justify-content: space-around; gap: 3rem; margin-top: 2rem;">
+                <div style="flex: 1; text-align: center;">
+                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">In-distribution</div>
+                  <div style="display: flex; justify-content: center; gap: 1.5rem">
                     <div>
-                      <p class="generalization-label">Goal image</p>
-                      <img class="generalization-image" src="./assets/id_goal_img.png" alt="Goal image" />
+                      <p style="font-weight: bold;">Goal image</p>
+                      <img src="./assets/id_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
                     </div>
                     <div>
-                      <p class="generalization-label">Success episode</p>
-                      <img class="generalization-image" src="./assets/id_episode.gif" alt="In-distribution success episode" />
+                      <p style="font-weight: bold;">Success episode</p>
+                      <img src="./assets/id_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
                     </div>
                   </div>
                 </div>
-                <div class="generalization-column">
-                  <div class="generalization-heading">Out-of-distribution</div>
-                  <div class="generalization-pairs">
+                <div style="flex: 1; text-align: center;">
+                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">Out-of-distribution</div>
+                  <div style="display: flex; justify-content: center; gap: 1.5rem">
                     <div>
-                      <p class="generalization-label">Goal image</p>
-                      <img class="generalization-image" src="./assets/ood_goal_img.png" alt="Goal image" />
+                      <p style="font-weight: bold;">Goal image</p>
+                      <img src="./assets/ood_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
                     </div>
                     <div>
-                      <p class="generalization-label">Success episode</p>
-                      <img class="generalization-image" src="./assets/ood_episode.gif" alt="Out-of-distribution success episode" />
+                      <p style="font-weight: bold;">Success episode</p>
+                      <img src="./assets/ood_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
                     </div>
                   </div>
                 </div>
@@ -345,32 +345,32 @@
 
           <section class="section">
             <div class="container is-max-desktop">
-              <div class="generalization-grid">
-                <div class="generalization-column">
-                  <div class="generalization-heading">Compositional generalization</div>
-                  <div class="generalization-pairs">
+              <div style="display: flex; justify-content: space-around; gap: 3rem; margin-top: 2rem;">
+                <div style="flex: 1; text-align: center;">
+                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">Compositional generalization</div>
+                  <div style="display: flex; justify-content: center; gap: 1.5rem">
                     <div>
-                      <p class="generalization-label">Goal image</p>
-                      <img class="generalization-image" src="./assets/cg_goal_img.png" alt="Goal image" />
+                      <p style="font-weight: bold;">Goal image</p>
+                      <img src="./assets/cg_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
                     </div>
                     <div>
-                      <p class="generalization-label">Success episode</p>
-                      <img class="generalization-image" src="./assets/cg_episode.gif" alt="Compositional generalization success episode" />
+                      <p style="font-weight: bold;">Success episode</p>
+                      <img src="./assets/cg_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
                     </div>
                   </div>
                 </div>
-                <div class="generalization-column">
-                  <div class="generalization-heading">
+                <div style="flex: 1; text-align: center;">
+                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">
                     Compositional generalization<br>(same color)
                   </div>
-                  <div class="generalization-pairs">
+                  <div style="display: flex; justify-content: center; gap: 1.5rem">
                     <div>
-                      <p class="generalization-label">Goal image</p>
-                      <img class="generalization-image" src="./assets/cg_sc_goal_img.png" alt="Goal image" />
+                      <p style="font-weight: bold;">Goal image</p>
+                      <img src="./assets/cg_sc_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
                     </div>
                     <div>
-                      <p class="generalization-label">Success episode</p>
-                      <img class="generalization-image" src="./assets/cg_sc_episode.gif" alt="Compositional same-color success episode" />
+                      <p style="font-weight: bold;">Success episode</p>
+                      <img src="./assets/cg_sc_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
                     </div>
                   </div>
                 </div>
@@ -578,6 +578,6 @@
         </p>
       </div>
     </footer>
-    <script src="./js/slider.js"></script>
+    <script src="./js/slider.js?v=20260209-1"></script>
   </body>
 </html>
