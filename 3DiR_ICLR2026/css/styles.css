@@ -179,7 +179,8 @@ body {
   width: 100%;
 }
 
-.teaser-carousel video {
+.teaser-carousel video,
+.teaser-carousel img {
   width: 100%;
   height: auto;
   display: block;
@@ -209,6 +210,15 @@ body {
   min-width: 84px;
   font-weight: 700;
   line-height: 1.25;
+}
+
+.two-line-label {
+  text-align: center;
+  min-width: 92px;
+}
+
+.two-line-label span {
+  display: block;
 }
 
 .result-video {
