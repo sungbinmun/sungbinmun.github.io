@@ -194,6 +194,10 @@ body {
   margin: 0 auto;
 }
 
+.results-note {
+  margin-top: 1rem;
+}
+
 .video-stack {
   display: flex;
   flex-direction: column;
