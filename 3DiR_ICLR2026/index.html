@@ -220,14 +220,14 @@
                         Novel View Synthesis: Clevr3D
                       </h2>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                      <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="min-width: 60px; font-weight: bold;">OSRT</div>
-                        <video src="./assets/clevr3d_nvs_osrt.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                    <div class="video-stack">
+                      <div class="video-row">
+                        <div class="video-label">OSRT</div>
+                        <video class="result-video" src="./assets/clevr3d_nvs_osrt.mp4" controls></video>
                       </div>
-                      <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="min-width: 60px; font-weight: bold;">Ours</div>
-                        <video src="./assets/clevr3d_nvs_ours.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      <div class="video-row">
+                        <div class="video-label">Ours</div>
+                        <video class="result-video" src="./assets/clevr3d_nvs_ours.mp4" controls></video>
                       </div>
                     </div>
                   </div>
@@ -237,14 +237,14 @@
                         Novel View Synthesis: IsaacGym3D
                       </h2>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                      <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="min-width: 60px; font-weight: bold;">OSRT</div>
-                        <video src="./assets/isaacgym3d_nvs_osrt.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                    <div class="video-stack">
+                      <div class="video-row">
+                        <div class="video-label">OSRT</div>
+                        <video class="result-video" src="./assets/isaacgym3d_nvs_osrt.mp4" controls></video>
                       </div>
-                      <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="min-width: 60px; font-weight: bold;">Ours</div>
-                        <video src="./assets/isaacgym3d_nvs_ours.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      <div class="video-row">
+                        <div class="video-label">Ours</div>
+                        <video class="result-video" src="./assets/isaacgym3d_nvs_ours.mp4" controls></video>
                       </div>
                     </div>
                   </div>
@@ -264,7 +264,7 @@
                 </h2>
               </div>
               <div class="column has-text-justified">
-                <img src="./assets/block_manipulation.png" width="90%" style="display: block; margin: auto" />
+                <img class="results-overview-image" src="./assets/block_manipulation.png" alt="Block manipulation overview" />
                 <p class="content">
                 </p>
                 <div class="results-carousel" data-carousel="block-swap">
@@ -273,27 +273,27 @@
                   </button>
                   <div class="carousel-viewport">
                     <div class="carousel-slide is-active" data-carousel-slide>
-                      <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="min-width: 60px; font-weight: bold;">Color Swapping</div>
-                        <video src="./assets/clevr3d_bs_color.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      <div class="video-row">
+                        <div class="video-label">Color Swapping</div>
+                        <video class="result-video" src="./assets/clevr3d_bs_color.mp4" controls></video>
                       </div>
                     </div>
                     <div class="carousel-slide" data-carousel-slide>
-                      <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="min-width: 60px; font-weight: bold;">Size Swapping</div>
-                        <video src="./assets/clevr3d_bs_size.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      <div class="video-row">
+                        <div class="video-label">Size Swapping</div>
+                        <video class="result-video" src="./assets/clevr3d_bs_size.mp4" controls></video>
                       </div>
                     </div>
                     <div class="carousel-slide" data-carousel-slide>
-                      <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="min-width: 60px; font-weight: bold;">Shape Swapping</div>
-                        <video src="./assets/isaacgym3d_bs_shape.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      <div class="video-row">
+                        <div class="video-label">Shape Swapping</div>
+                        <video class="result-video" src="./assets/isaacgym3d_bs_shape.mp4" controls></video>
                       </div>
                     </div>
                     <div class="carousel-slide" data-carousel-slide>
-                      <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="min-width: 60px; font-weight: bold;">Position Swapping</div>
-                        <video src="./assets/isaacgym3d_bs_position.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      <div class="video-row">
+                        <div class="video-label">Position Swapping</div>
+                        <video class="result-video" src="./assets/isaacgym3d_bs_position.mp4" controls></video>
                       </div>
                     </div>
                   </div>
@@ -312,30 +312,30 @@
                   Generalization in Reinforcement Learning
                 </h2>
               </div>
-              <div style="display: flex; justify-content: space-around; gap: 3rem; margin-top: 2rem;">
-                <div style="flex: 1; text-align: center;">
-                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">In-distribution</div>
-                  <div style="display: flex; justify-content: center; gap: 1.5rem">
+              <div class="generalization-grid">
+                <div class="generalization-column">
+                  <div class="generalization-heading">In-distribution</div>
+                  <div class="generalization-pairs">
                     <div>
-                      <p style="font-weight: bold;">Goal image</p>
-                      <img src="./assets/id_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                      <p class="generalization-label">Goal image</p>
+                      <img class="generalization-image" src="./assets/id_goal_img.png" alt="Goal image" />
                     </div>
                     <div>
-                      <p style="font-weight: bold;">Success episode</p>
-                      <img src="./assets/id_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                      <p class="generalization-label">Success episode</p>
+                      <img class="generalization-image" src="./assets/id_episode.gif" alt="In-distribution success episode" />
                     </div>
                   </div>
                 </div>
-                <div style="flex: 1; text-align: center;">
-                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">Out-of-distribution</div>
-                  <div style="display: flex; justify-content: center; gap: 1.5rem">
+                <div class="generalization-column">
+                  <div class="generalization-heading">Out-of-distribution</div>
+                  <div class="generalization-pairs">
                     <div>
-                      <p style="font-weight: bold;">Goal image</p>
-                      <img src="./assets/ood_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                      <p class="generalization-label">Goal image</p>
+                      <img class="generalization-image" src="./assets/ood_goal_img.png" alt="Goal image" />
                     </div>
                     <div>
-                      <p style="font-weight: bold;">Success episode</p>
-                      <img src="./assets/ood_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                      <p class="generalization-label">Success episode</p>
+                      <img class="generalization-image" src="./assets/ood_episode.gif" alt="Out-of-distribution success episode" />
                     </div>
                   </div>
                 </div>
@@ -345,32 +345,32 @@
 
           <section class="section">
             <div class="container is-max-desktop">
-              <div style="display: flex; justify-content: space-around; gap: 3rem; margin-top: 2rem;">
-                <div style="flex: 1; text-align: center;">
-                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">Compositional generalization</div>
-                  <div style="display: flex; justify-content: center; gap: 1.5rem">
+              <div class="generalization-grid">
+                <div class="generalization-column">
+                  <div class="generalization-heading">Compositional generalization</div>
+                  <div class="generalization-pairs">
                     <div>
-                      <p style="font-weight: bold;">Goal image</p>
-                      <img src="./assets/cg_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                      <p class="generalization-label">Goal image</p>
+                      <img class="generalization-image" src="./assets/cg_goal_img.png" alt="Goal image" />
                     </div>
                     <div>
-                      <p style="font-weight: bold;">Success episode</p>
-                      <img src="./assets/cg_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                      <p class="generalization-label">Success episode</p>
+                      <img class="generalization-image" src="./assets/cg_episode.gif" alt="Compositional generalization success episode" />
                     </div>
                   </div>
                 </div>
-                <div style="flex: 1; text-align: center;">
-                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">
+                <div class="generalization-column">
+                  <div class="generalization-heading">
                     Compositional generalization<br>(same color)
                   </div>
-                  <div style="display: flex; justify-content: center; gap: 1.5rem">
+                  <div class="generalization-pairs">
                     <div>
-                      <p style="font-weight: bold;">Goal image</p>
-                      <img src="./assets/cg_sc_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                      <p class="generalization-label">Goal image</p>
+                      <img class="generalization-image" src="./assets/cg_sc_goal_img.png" alt="Goal image" />
                     </div>
                     <div>
-                      <p style="font-weight: bold;">Success episode</p>
-                      <img src="./assets/cg_sc_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                      <p class="generalization-label">Success episode</p>
+                      <img class="generalization-image" src="./assets/cg_sc_episode.gif" alt="Compositional same-color success episode" />
                     </div>
                   </div>
                 </div>

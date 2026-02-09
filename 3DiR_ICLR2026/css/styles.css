@@ -99,12 +99,6 @@ body {
   margin-top: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-  .venue-text {
-    font-size: 1.5rem;
-  }
-}
-
 .publication-video {
   position: relative;
   width: 100%;
@@ -193,6 +187,72 @@ body {
   border-radius: 10px;
 }
 
+.results-overview-image {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+.video-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.video-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.video-label {
+  min-width: 84px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.result-video {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.generalization-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.generalization-column {
+  flex: 1;
+  text-align: center;
+}
+
+.generalization-heading {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.generalization-pairs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.generalization-label {
+  font-weight: 700;
+}
+
+.generalization-image {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
 .carousel-arrow {
   background: #14274e;
   border: none;
@@ -242,4 +302,67 @@ body {
 .bibtex-box {
   background-color: #f5f5f5;
   font-family: "Roboto Mono", monospace;
+}
+
+@media screen and (max-width: 768px) {
+  .venue-text {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  .results-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .navbar-brand.logo {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar-item.logo.logo-large img {
+    max-height: 76px;
+  }
+
+  .method-carousel,
+  .results-carousel {
+    gap: 0.5rem;
+  }
+
+  .carousel-arrow {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .video-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  .video-label {
+    min-width: 0;
+    text-align: center;
+  }
+
+  .generalization-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .generalization-pairs {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .generalization-image {
+    width: 100%;
+    max-width: 320px;
+  }
 }
