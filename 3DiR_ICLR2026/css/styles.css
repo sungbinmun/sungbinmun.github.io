@@ -219,40 +219,6 @@ body {
   border-radius: 10px;
 }
 
-.generalization-grid {
-  display: flex;
-  justify-content: space-around;
-  gap: 3rem;
-  margin-top: 2rem;
-}
-
-.generalization-column {
-  flex: 1;
-  text-align: center;
-}
-
-.generalization-heading {
-  font-weight: 700;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.generalization-pairs {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.generalization-label {
-  font-weight: 700;
-}
-
-.generalization-image {
-  width: 90%;
-  display: block;
-  margin: 0 auto;
-}
-
 .carousel-arrow {
   background: #14274e;
   border: none;
@@ -339,30 +305,14 @@ body {
   }
 
   .video-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.6rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .video-label {
-    min-width: 0;
-    text-align: center;
+    min-width: 72px;
+    text-align: left;
   }
 
-  .generalization-grid {
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 1.25rem;
-  }
-
-  .generalization-pairs {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .generalization-image {
-    width: 100%;
-    max-width: 320px;
-  }
 }
