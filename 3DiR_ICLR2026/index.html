@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D-aware Disentangled Representation for Compositional Reinforcement Learning</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400;500;600&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/bulma_toggle.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/5fd1dd8417.js" crossorigin="anonymous"></script>
+
+    <!-- Academicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  </head>
+
+  <body>
+    <!-- title / authors / icons -->
+    <section class="hero hero-main">
+      <div class="hero-body">
+        <div class="container is-max-widescreen has-text-centered">
+          <!-- title -->
+          <h1 class="title is-size-1 is-size-2-mobile publication-title">
+            3D-aware Disentangled Representation for Compositional Reinforcement Learning
+          </h1>
+
+          <!-- venue -->
+          <div class="venue-text has-text-centered">
+            ICLR 2026
+          </div>
+
+          <!-- authors -->
+          <div class="container is-max-desktop has-text-centered header-gap">
+            <div class="author-list is-size-5-tablet publication-authors">
+              <a class="author-blocks" href="https://www.junhokim.xyz">Sungbin Mun<sup>1</sup></a>
+              <span class="author-blocks">Younghwan Lee<sup>1</sup></span>
+              <span class="author-blocks">Cheol-Hui Min<sup>2</sup></span>
+              <span class="author-blocks">Mineui Hong<sup>3</sup></span>
+              <a class="author-blocks" href="http://3d.snu.ac.kr/members">Young Min Kim<sup>1</sup></a>
+            </div>
+          </div>
+
+          <div class="affiliation-actions">
+            <div class="is-size-5-tablet publication-institute">
+              <span class="author-block">
+                <sup>1</sup> Seoul National University, <sup>2</sup> Samsung Electronics, <sup>3</sup> Carnegie Mellon University
+              </span>
+            </div>
+
+            <!-- logo img -->
+            <nav class="navbar logo">
+              <div class="navbar-brand logo">
+              <a class="navbar-item logo logo-small" href="https://3d.snu.ac.kr/">
+                <img src="./assets/3dv.png" />
+              </a>
+              <a class="navbar-item logo logo-small" href="#">
+                <img src="./assets/samsung.png" />
+              </a>
+                <a class="navbar-item logo logo-large" href="#">
+                  <img src="./assets/cmu.jpg" />
+                </a>
+              </div>
+            </nav>
+
+            <!-- icons -->
+            <div class="is-size-5 link-blocks">
+            <a class="button link-button is-rounded" href="https://openreview.net/forum?id=GE0IFoDx8a">
+              <span class="icon">
+                <i class="fa-solid fa-file"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+            <a class="button link-button is-rounded" href="mailto:">
+              <span class="icon">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <span>Contact</span>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- teaser -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="method-carousel teaser-carousel">
+          <div class="carousel-viewport">
+            <div class="carousel-slide is-active teaser-slide" data-carousel-slide>
+              <video
+                src="./assets/teaser_final.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                controls
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- abtract -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- abstract -->
+        <div class="has-text-centered">
+          <h2 class="subtitle section-title has-text-weight-medium publication-keywords section-heading">
+            Abstract
+          </h2>
+        </div>
+        <div class="content has-text-justified">
+          <p class="content">
+          Vision-based reinforcement learning can benefit from object-centric scene representation, which factorizes the visual observation into individual objects and their attributes, such as color, shape, size, and position.
+          While such object-centric representations can extract components that generalize well for various multi-object manipulation tasks, they are prone to issues with occlusions and 3D ambiguity of object properties due to their reliance on single-view 2D image features. 
+          Furthermore, the entanglement between object configurations and camera poses complicates the object-centric disentanglement in 3D, leading to poor 3D reasoning by the agent in vision-based reinforcement learning applications.
+          To address the lack of 3D awareness and the object-camera entanglement problem, we propose an enhanced 3D object-centric representation that utilizes multi-view 3D features and enforces more explicit 3D-aware disentanglement.
+          The enhancement is based on the integration of the recent success of multi-view Transformer and the prototypical representation learning among the object-centric representations.
+          The representation, therefore, can stably identify proxies of 3D positions of individual objects along with their semantic and physical properties, exhibiting excellent interpretability and controllability.
+          Then, our proposed block transformer policy effectively performs novel tasks by assembling desired properties adaptive to the new goal states, even when provided with unseen viewpoints at test time.
+          We demonstrate that our 3D-aware block representation is scalable to compose diverse novel scenes and enjoys superior performance in out-of-distribution tasks with multi-object manipulations under both seen and unseen viewpoints compared to existing methods.
+          </p>
+        </div>
+        
+        <!-- video
+        <div class="has-text-centered">
+          <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords section-heading">
+            Video
+          </h2>
+        </div>
+        <div class="publication-video">
+          <iframe
+            src="https://www.youtube.com/embed/7mWPYGRfk-I?si=x0xlB16kK1TOXN_I"
+            allow="autoplay; encrypted-media"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!-- method -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="has-text-centered">
+          <h2 class="subtitle section-title has-text-weight-medium publication-keywords section-heading">
+            Method
+          </h2>
+        </div>
+        <div class="method-carousel" data-carousel="method">
+          <button class="carousel-arrow" type="button" aria-label="Previous slide" data-carousel="method" data-dir="prev">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="carousel-viewport">
+            <div class="carousel-slide is-active" data-carousel-slide>
+              <h3 class="subtitle results-subtitle has-text-weight-medium publication-keywords section-heading has-text-centered">
+                Overview
+              </h3>
+              <img src="./assets/f1_final_원본.png" alt="Method overview diagram" />
+              <p class="content">
+              We propose a structured 3D object representation method that learns disentangled object attributes (e.g., shape, color, size) using a novel mechanism called the <strong>3D block-slot attention mechanism</strong>.
+              Built on top of OSRT, this method enhances interpretability and disentanglement by assigning dedicated slots for the background and agent. The resulting representation captures compositional semantics critical for downstream tasks like robotic manipulation.
+              </p>
+            </div>
+            <div class="carousel-slide" data-carousel-slide>
+              <h3 class="subtitle results-subtitle has-text-weight-medium publication-keywords section-heading has-text-centered">
+                Block Transformer Policy
+              </h3>
+              <img src="./assets/f2_final_원본.png" alt="Module design diagram" />
+              <p class="content">
+              To leverage the structured representation, we introduce a <strong>block transformer policy</strong> for goal-conditioned RL.
+              It matches objects in current and goal states based on attributes and performs block-wise cross-attention to reason over their differences. Combined with agent features and actions, a self-attention module aggregates information for action prediction.
+              This approach enables learning a robust and generalizable policy that succeeds across diverse generalization scenarios, including compositional and out-of-distribution environments.
+              </p>
+            </div>
+          </div>
+          <button class="carousel-arrow" type="button" aria-label="Next slide" data-carousel="method" data-dir="next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- results -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="has-text-centered">
+          <h2 class="subtitle section-title has-text-weight-medium publication-keywords section-heading">
+            Results
+          </h2>
+        </div>
+        <div class="results-blocks">
+          <section class="section">
+            <div class="container is-max-desktop">
+              <div class="results-carousel" data-carousel="nvs">
+                <button class="carousel-arrow" type="button" aria-label="Previous slide" data-dir="prev">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="carousel-viewport">
+                  <div class="carousel-slide is-active" data-carousel-slide>
+                    <div class="column is-full-width is-centered has-text-centered has-text-left-mobile">
+                      <h2 class="subtitle results-subtitle has-text-weight-medium publication-keywords">
+                        Novel View Synthesis: Clevr3D
+                      </h2>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                      <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="min-width: 60px; font-weight: bold;">OSRT</div>
+                        <video src="./assets/clevr3d_nvs_osrt.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      </div>
+                      <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="min-width: 60px; font-weight: bold;">Ours</div>
+                        <video src="./assets/clevr3d_nvs_ours.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-slide" data-carousel-slide>
+                    <div class="column is-full-width is-centered has-text-centered has-text-left-mobile">
+                      <h2 class="subtitle results-subtitle has-text-weight-medium publication-keywords">
+                        Novel View Synthesis: IsaacGym3D
+                      </h2>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                      <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="min-width: 60px; font-weight: bold;">OSRT</div>
+                        <video src="./assets/isaacgym3d_nvs_osrt.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      </div>
+                      <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="min-width: 60px; font-weight: bold;">Ours</div>
+                        <video src="./assets/isaacgym3d_nvs_ours.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-arrow" type="button" aria-label="Next slide" data-dir="next">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="container is-max-desktop">
+              <div class="column is-full-width is-centered has-text-centered has-text-left-mobile">
+                <h2 class="subtitle results-subtitle has-text-weight-medium publication-keywords">
+                  Block Manipulation and Novel View Synthesis
+                </h2>
+              </div>
+              <div class="column has-text-justified">
+                <img src="./assets/block_manipulation.png" width="90%" style="display: block; margin: auto" />
+                <p class="content">
+                </p>
+                <div class="results-carousel" data-carousel="block-swap">
+                  <button class="carousel-arrow" type="button" aria-label="Previous slide" data-dir="prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </button>
+                  <div class="carousel-viewport">
+                    <div class="carousel-slide is-active" data-carousel-slide>
+                      <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="min-width: 60px; font-weight: bold;">Color Swapping</div>
+                        <video src="./assets/clevr3d_bs_color.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      </div>
+                    </div>
+                    <div class="carousel-slide" data-carousel-slide>
+                      <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="min-width: 60px; font-weight: bold;">Size Swapping</div>
+                        <video src="./assets/clevr3d_bs_size.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      </div>
+                    </div>
+                    <div class="carousel-slide" data-carousel-slide>
+                      <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="min-width: 60px; font-weight: bold;">Shape Swapping</div>
+                        <video src="./assets/isaacgym3d_bs_shape.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      </div>
+                    </div>
+                    <div class="carousel-slide" data-carousel-slide>
+                      <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="min-width: 60px; font-weight: bold;">Position Swapping</div>
+                        <video src="./assets/isaacgym3d_bs_position.mp4" width="90%" style="display: block; margin: autol" controls></video>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="carousel-arrow" type="button" aria-label="Next slide" data-dir="next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="container is-max-desktop">
+              <div class="column is-full-width is-centered has-text-centered has-text-left-mobile">
+                <h2 class="subtitle results-subtitle has-text-weight-medium publication-keywords">
+                  Generalization in Reinforcement Learning
+                </h2>
+              </div>
+              <div style="display: flex; justify-content: space-around; gap: 3rem; margin-top: 2rem;">
+                <div style="flex: 1; text-align: center;">
+                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">In-distribution</div>
+                  <div style="display: flex; justify-content: center; gap: 1.5rem">
+                    <div>
+                      <p style="font-weight: bold;">Goal image</p>
+                      <img src="./assets/id_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                    </div>
+                    <div>
+                      <p style="font-weight: bold;">Success episode</p>
+                      <img src="./assets/id_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                    </div>
+                  </div>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">Out-of-distribution</div>
+                  <div style="display: flex; justify-content: center; gap: 1.5rem">
+                    <div>
+                      <p style="font-weight: bold;">Goal image</p>
+                      <img src="./assets/ood_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                    </div>
+                    <div>
+                      <p style="font-weight: bold;">Success episode</p>
+                      <img src="./assets/ood_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="container is-max-desktop">
+              <div style="display: flex; justify-content: space-around; gap: 3rem; margin-top: 2rem;">
+                <div style="flex: 1; text-align: center;">
+                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">Compositional generalization</div>
+                  <div style="display: flex; justify-content: center; gap: 1.5rem">
+                    <div>
+                      <p style="font-weight: bold;">Goal image</p>
+                      <img src="./assets/cg_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                    </div>
+                    <div>
+                      <p style="font-weight: bold;">Success episode</p>
+                      <img src="./assets/cg_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                    </div>
+                  </div>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                  <div style="font-weight: bold; margin-bottom: 1rem; font-size: 1.2rem;">
+                    Compositional generalization<br>(same color)
+                  </div>
+                  <div style="display: flex; justify-content: center; gap: 1.5rem">
+                    <div>
+                      <p style="font-weight: bold;">Goal image</p>
+                      <img src="./assets/cg_sc_goal_img.png" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                    </div>
+                    <div>
+                      <p style="font-weight: bold;">Success episode</p>
+                      <img src="./assets/cg_sc_episode.gif" alt="Goal image" style="width: 90%; display: block; margin: auto;" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!--
+        <div class="content has-text-justified">
+          <img src="./assets/events.gif" width="90%" style="display: block; margin: auto" />
+          <p class="content">
+            Event cameras are neuromorphic sensors that encode visual information as a sequence of events. In contrast
+            to conventional frame-based cameras that output absolute brightness intensities, event cameras respond to
+            brightness changes. The following figure shows a visual description of how event cameras function compared
+            to conventional cameras. Notice how brightness changes are encoded as 'streams' in the spatio-temporal
+            domain.
+          </p>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <!--
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="has-text-centered">
+          <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords section-heading">
+            Dataset Overview
+          </h2>
+        </div>
+        <div class="content has-text-justified">
+          <img src="./assets/dataset_overview.png" width="85%" style="display: block; margin: auto" />
+          <p class="content">
+            N-ImageNet is a large-scale event dataset that enables training and benchmarking object recongition
+            algorithms using event camera input. The dataset surpasses all existing datasets in both size and label
+            granularity.
+          </p>
+        </div>
+
+        <div class="has-text-centered" style="margin-top: 2rem">
+          <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords section-heading">
+            Data Acquisition Setup
+          </h2>
+        </div>
+        <div class="content has-text-justified">
+          <img src="./assets/hardware.png" width="85%" style="display: block; margin: auto" />
+          <p class="content">
+            To capture N-ImageNet, we design custom hardware to trigger perpetual camera motion. The device consists
+            of two geared motors connected to a pair of perpendicularly adjacent gear racks where the upper and lower
+            motors are responsible for vertical and horizontal motion, respectively. Each motor is further linked to a
+            programmable Arduino board, which can control the camera movement.
+          </p>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!--
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="has-text-centered">
+          <h2 class="subtitle is-4 is-size-3-mobile has-text-weight-medium publication-keywords section-heading">
+            Object Recognition Performance Analysis
+          </h2>
+        </div>
+        <div class="content has-text-justified">
+          <img src="./assets/performance.png" width="80%" style="display: block; margin: auto" />
+          <p class="content">
+            Due to its size and label diversity, N-ImageNet can function as a challenging benchmark for event-based
+            object recognition. The plot below shows the classification accuracy of existing event-based recognition
+            algorithms on N-ImageNet. There exists a large performance gap with the ImageNet state-of-the-art, which
+            suggests that mastering N-ImageNet is still a long way to go. We expect N-ImageNet to foster development
+            of event classifiers that could readily function in the real world.
+          </p>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!--
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width is-centered has-text-centered has-text-left-mobile">
+          <h2 class="subtitle section-title has-text-weight-medium publication-keywords section-heading">
+            Useful Links for Benchmarking and Downloading
+          </h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>Public Benchmark: </b> Check out the public benchmark on event-based object recognition available at
+              the following <a href="https://paperswithcode.com/dataset/n-imagenet">link</a>. Feel free to upload new
+              results to the benchmark!
+            </p>
+            <p>
+              <b>Downloading Full N-ImageNet: </b> Refer to the following
+              <a
+                href="https://docs.google.com/document/d/1x0Vqe_5tVAJtYLYSZLwN6oNMExyUjIh-a30oLOKV2rE/edit?usp=share_link"
+                >link</a
+              >
+              to download N-ImageNet. Note the full dataset size will be around 400 GB, so prepare a sufficient amount
+              of disk space before downloading! Please leave an email to
+              <a href="mailto:82magnolia@snu.ac.kr">Junho Kim</a> if you are in urgent need of N-ImageNet and the file
+              share links are not working.
+            </p>
+            <p>
+              <b
+                >Downloading Mini
+                <span class="icon-text">
+                  <span class="icon">
+                    <i class="fa-solid fa-baby"></i>
+                  </span>
+                  <span>N-ImageNet:</span>
+                </span>
+              </b>
+              Starting from 2022, we publicly released a smaller version of N-ImageNet, called mini N-ImageNet. The
+              dataset contains 100 classes, which is 1/10 of the original N-ImageNet. We expect the dataset to enable
+              quick and light-weight evaluation of new event-based object recognition methods. To download the dataset,
+              please refer to the follwoing
+              <a href="https://zenodo.org/record/6388221#.Y51iJNJBw5k">link</a>.
+            </p>
+            <p>
+              <b>Downloading Pretrained Models: </b> To download the pretrained models, refer to the following
+              <a href="https://github.com/82magnolia/n_imagenet?tab=readme-ov-file#downloading-pretrained-models"
+                >link</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- BibTex sectoion -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="column is-full-width is-centered has-text-centered">
+          <h2 class="subtitle section-title has-text-weight-medium publication-keywords">BibTeX</h2>
+        </div>
+        <div class="box bibtex-box">
+          <pre>
+@InProceedings{,
+    author    = {},
+    title     = {},
+    booktitle = {},
+    month     = {},
+    year      = {},
+    pages     = {}
+}</pre
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="footer" style="padding-top: 1rem">
+      <!-- navigation -->
+      <a role="button" class="navbar-burger" data-target="moreResearch" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <div class="navbar-menu" id="moreResearch">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center">
+          <div class="block is-flex" style="margin-bottom: 0px">
+            <a class="navbar-item" href="https://www.junhokim.xyz">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+            </a>
+          </div>
+          <!--
+          <a class="navbar-item" href="https://github.com/82magnolia">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+          </a>
+          <div class="navbar-item has-dropdown has-dropdown-up is-hoverable">
+            <a class="navbar-link">More Research</a>
+
+            <div class="navbar-dropdown is-right">
+              <a class="navbar-item" href="https://82magnolia.github.io/event_localization/">
+                Event-Based Visual Localization
+              </a>
+              <a class="navbar-item" href="https://github.com/82magnolia/ev_tta">
+                Test-Time Adaptation for Event Cameras
+              </a>
+              <a
+                class="navbar-item"
+                href="https://openaccess.thecvf.com/content/WACV2023/html/Hwang_Ev-NeRF_Event_Based_Neural_Radiance_Field_WACV_2023_paper.html"
+              >
+                Event-Based Neural Radiance Fields
+              </a>
+            </div>
+          </div>
+          -->
+        </div>
+      </div>
+
+      <!-- license -->
+      <div class="content has-text-centered" style="margin-top: 1.6rem">
+        <p>
+          This website is licensed under a
+          <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+            >Creative Commons Attribution-ShareAlike 4.0 International License</a
+          >
+        </p>
+      </div>
+    </footer>
+    <script src="./js/slider.js"></script>
+  </body>
+</html>
