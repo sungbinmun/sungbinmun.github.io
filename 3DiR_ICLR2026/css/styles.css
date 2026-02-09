@@ -219,6 +219,41 @@ body {
   border-radius: 10px;
 }
 
+.rl-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.rl-column {
+  flex: 1;
+  text-align: center;
+}
+
+.rl-heading {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.rl-pairs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.rl-label {
+  font-weight: 700;
+}
+
+.rl-image {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
 .carousel-arrow {
   background: #14274e;
   border: none;
@@ -321,6 +356,15 @@ body {
   .video-label {
     min-width: 72px;
     text-align: left;
+  }
+
+  .rl-pairs {
+    gap: 1rem;
+  }
+
+  .rl-image {
+    width: 100%;
+    max-width: 320px;
   }
 
 }
