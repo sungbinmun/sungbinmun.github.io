@@ -12,29 +12,36 @@ const Scene = dynamic(() => import('../scene'), {
 })
 
 const Main = ({ children, router }) => {
+  const isHome = router?.pathname === '/'
+
   return (
     <Box as="main" pb={8}>
       <Head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034797123756399"
      crossorigin="anonymous"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Changwoon's homepage" />
-        <meta name="author" content="Changwoon Choi" />
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <meta property="og:site_name" content="Changwoon Choi" />
-        <meta name="og:title" content="Changwoon Choi" />
+        <meta name="description" content="Sungbin's homepage" />
+        <meta name="author" content="Sungbin Mun" />
+        <link rel="apple-touch-icon" href="/images/robot_black.svg" />
+        <link rel="icon" href="/images/robot_black.svg" media="(prefers-color-scheme: light)" />
+        <link rel="icon" href="/images/robot_white.svg" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/images/robot_black.svg" />
+        <meta property="og:site_name" content="Sungbin Mun" />
+        <meta name="og:title" content="Sungbin Mun" />
         <meta property="og:type" content="website" />
-        <title>Changwoon Choi</title>
+        <title>Sungbin Mun</title>
       </Head>
 
       <NavBar path={router.asPath} />
 
-      <Container maxW="95ch" pt={14}>
-      <Scene />
-
-      <Box align="center" h="5em">
-      </Box>
+      <Container maxW="95ch" pt={isHome ? 20 : 14}>
+      {!isHome && (
+        <>
+          <Scene />
+          <Box align="center" h="5em">
+          </Box>
+        </>
+      )}
 
         {children}
         <Analytics />

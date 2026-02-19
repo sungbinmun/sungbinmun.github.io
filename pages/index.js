@@ -5,68 +5,107 @@ import {
   Container,
   Heading,
   Box,
-  // SimpleGrid,
   Button,
-  List,
-  ListItem,
   chakra,
   Collapse,
 } from '@chakra-ui/react'
-import { ChevronRightIcon, ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-// import { GridItem } from '../components/grid-item'
-import { IoLogoGithub, IoMailUnread, IoDocumentAttach, IoSchool } from 'react-icons/io5'
+import { PubGridItem } from '../components/grid-item'
+import { IoLogoGithub, IoMailUnread, IoSchool } from 'react-icons/io5'
 import Image from 'next/image'
 // import Script from 'next/script'
 import LogoBanner from '../components/logobanner'
+import thumbProbeOptim from '../public/images/publications/3DiR_teaser.gif'
 
 const ProfileImage = chakra(Image, {
-  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
+  shouldForwardProp: prop => ['width', 'height', 'src', 'alt', 'style'].includes(prop)
 })
 
+const PROFILE_WIDTH = 150
+const PROFILE_HEIGHT = 170
+
 const Home = () => {
-  const [showOldNews, setShowOldNews] = useState(false);
   const [showMap, setShowMap] = useState(false);
   return (
   <Layout>
     <Container>
 
-      <Box display={{ lg: 'flex' }}>
-        <Box flexGrow={1}>
+      <Box display="flex" alignItems="flex-start" justifyContent="space-between" gap={4}>
+        <Box flexGrow={1} minW={0}>
           <Heading as="h2" variant="page-title">
-            Changwoon Choi
+            Sungbin Mun
           </Heading>
           <p><b>Ph.D. Student</b> <br/>Seoul National University</p>
+          <Box mt={3} display="flex" gap={2} flexWrap="wrap" justifyContent="flex-start">
+            <Link href="mailto: brian0429@snu.ac.kr" target="_blank">
+              <Button
+                size="sm"
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<IoMailUnread />}
+                minW="auto"
+                justifyContent="flex-start"
+                px={0}
+              >
+                E-mail
+              </Button>
+            </Link>
+            <Link href="https://github.com/sungbinmun" target="_blank">
+              <Button
+                size="sm"
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<IoLogoGithub />}
+                minW="auto"
+                justifyContent="flex-start"
+                px={0}
+              >
+                GitHub
+              </Button>
+            </Link>
+            <Link href="https://scholar.google.com/citations?user=DmPZo4QAAAAJ" target="_blank">
+              <Button
+                size="sm"
+                variant="ghost"
+                colorScheme="teal"
+                leftIcon={<IoSchool />}
+                minW="auto"
+                justifyContent="flex-start"
+                px={0}
+              >
+                Google Scholar
+              </Button>
+            </Link>
+          </Box>
         </Box>
-        <Box
-          flexShrink={0}
-          mt={{ base: 4, md: 0 }}
-          ml={{ md: 6 }}
-          textAlign="center"
-        >
+        <Box flexShrink={0} textAlign="center">
           <Box
             borderColor="whiteAlpha.800"
             borderWidth={2}
             borderStyle="solid"
-            w="150px"
-            h="150px"
+            w={`${PROFILE_WIDTH}px`}
+            h={`${PROFILE_HEIGHT}px`}
             display="inline-block"
-            borderRadius="full"
+            borderRadius="16px"
             overflow="hidden"
           >
             <ProfileImage
-              src="/images/changwoon.jpeg"
+              src="/images/SungbinMun.JPG"
               alt="Profile image"
-              borderRadius="full"
-              width="150"
-              height="150"
+              borderRadius="16px"
+              width={PROFILE_WIDTH}
+              height={PROFILE_HEIGHT}
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
           </Box>
         </Box>
       </Box>
+
+      <Box h="0.8em" />
 
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
@@ -78,42 +117,12 @@ const Home = () => {
             Young Min Kim
           </Link>
           .
-          Recently, I was a research scientist intern at {' '}
-          <Link as={NextLink} href="https://about.meta.com/realitylabs/" passHref scroll={false} target="_blank">
-            Meta Reality Labs
-          </Link>
-          .
-          Before that, I visited {' '}
-          <Link as={NextLink} href="https://cseweb.ucsd.edu/~haosu/" passHref scroll={false} target="_blank">
-            UCSD
-          </Link>
-          &nbsp;and worked as a research intern at{' '}
-          <Link as={NextLink} href="https://www.navercloudcorp.com/" passHref scroll={false} target="_blank">
-            NAVER Cloud
-          </Link>
-          &nbsp;during my PhD.
-          I obtained my Bacheler&apos;s degree from Seoul National University.
+          I obtained my Bacheler&apos;s degree from Korea University.
         </Paragraph>
         <Box height="0.3em"></Box>
         <Paragraph>
-          My research is focused on 3D computer vision and graphics.
-          Recently, I have been working on 3D reconstruction and neural rendering, ranging from photorealistic reconstruction to more conceptual and abstract representations.
+          My research is focused on 3D computer vision and robotics.
         </Paragraph>
-        <Box height="0.3em"></Box>
-        <Paragraph>
-          I am always open to new opportunities and collaborations! Please feel free to contact me if you are interested in my research.
-        </Paragraph>
-        <Box align="center" my={4}>
-          <Button
-            as={NextLink}
-            href="/publications"
-            scroll={false}
-            rightIcon={<ChevronRightIcon />}
-            colorScheme="teal"
-          >
-            Publications
-          </Button>
-        </Box>
       </Section>
 
 
@@ -123,134 +132,26 @@ const Home = () => {
         </Heading>
         <BioSection>
           <BioYear>2026.01</BioYear>
-          A paper about geometry and observation-aware 3D scene reconstruction accepted to IEEE VR (poster).
+          My first paper accepted to ICLR 2026.
         </BioSection>
-        <BioSection>
-          <BioYear>2026.01</BioYear>
-          I&apos;m attending IPIU. See you at Jeju!
-        </BioSection>
-        <BioSection>
-          <BioYear>2025.11</BioYear>
-          I gave a talk at&nbsp;
-          <Link as={NextLink} href="https://studios.disneyresearch.com/" passHref scroll={false} target="_blank">Disney Research|Studios</Link>
-          !
-        </BioSection>
-        <BioSection>
-          <BioYear>2025.06</BioYear>
-          <Link as={NextLink} href="https://changwoonchoi.github.io/HCP" passHref scroll={false} target="_blank">Humans as a Calibration Pattern</Link>
-          &nbsp;has been accepted to ICCV 2025!
-        </BioSection>
-      </Section>
-      <Section delay={0.3}>
-        <Heading
-          as="h3"
-          variant="section-subtitle"
-          cursor="pointer"
-          onClick={() => setShowOldNews(!showOldNews)}
-          display="flex"
-        >
-          Old News
-          {showOldNews ? <ChevronUpIcon /> : <ChevronDownIcon />}
-        </Heading>
-        <Collapse in={showOldNews} animateOpacity>
-          <BioSection>
-            <BioYear>2025.05</BioYear>
-            I&apos;ll be joining {' '}
-            <Link as={NextLink} href="https://about.meta.com/realitylabs/" passHref scroll={false} target="_blank">
-              Meta Reality Labs
-            </Link>
-            &nbsp;in London as a research scientist intern!
-          </BioSection>
-          <BioSection>
-            <BioYear>2025.04</BioYear>
-            I gave a talk at Seoul Science High School, from which I graduated 11 years ago!
-          </BioSection>
-          <BioSection>
-            <BioYear>2025.03</BioYear>
-            <Link as={NextLink} href="https://jaeah.me/liv3stroke_web" passHref scroll={false} target="_blank">Liv3Stroke</Link>
-            &nbsp;has been accepted to CVPR 2025!
-          </BioSection>
-          <BioSection>
-            <BioYear>2025.01</BioYear>
-            I received a SNU INMC Young Researcher Award!
-          </BioSection>
-          <BioSection>
-            <BioYear>2024.10</BioYear>
-            I&apos;m attending ECCV 2024. See you at Milano!
-          </BioSection>
-          <BioSection>
-            <BioYear>2024.07</BioYear>
-            I&apos;m attending SIGGRAPH 2024. See you at Denver!
-          </BioSection>
-          <BioSection>
-            <BioYear>2023.12</BioYear>
-            I&apos;m joining NAVER Cloud (CLOVA) as a research intern.
-          </BioSection>
-          <BioSection>
-            <BioYear>2023.10</BioYear>
-            I&apos;m attending Pacific Graphics 2023. See you at Daejeon!
-          </BioSection>
-          <BioSection>
-            <BioYear>2023.06</BioYear>
-            I&apos;m attending CVPR 2023. See you at Vancouver!
-          </BioSection>
-          <BioSection>
-            <BioYear>2023.05</BioYear>
-            Visiting UC San Diego as a visiting graduate student, hosted by Hao Su.
-          </BioSection>
-        </Collapse>
       </Section>
 
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
-          Info
+          Research
         </Heading>
-        <List>
-          <ListItem>
-            <Link href="mailto: hello@changwoon.info" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoMailUnread/>}
-              >
-                e-mail
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="CV_Changwoon.pdf" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoDocumentAttach/>}
-              >
-                Curriculum Vitae
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://github.com/changwoonchoi" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoGithub />}
-              >
-                GitHub
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://scholar.google.com/citations?user=DmPZo4QAAAAJ" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoSchool />}
-              >
-                Google Scholar
-              </Button>
-            </Link>
-          </ListItem>
-        </List>
+        <Box mt={4}>
+          <PubGridItem
+            title="3D-aware Disentangled Representation for Compositional Reinforcement Learning"
+            thumbnail={thumbProbeOptim}
+            journal="International Conference on Learning Representations (ICLR), 2026"
+            project_page="/3DiR_ICLR2026/index.html"
+            author={<><b>Sungbin Mun</b>, Younghwan Lee, Cheol-Hui Min, Mineui Hong, Young Min Kim</>}
+            paper="https://openreview.net/forum?id=GE0IFoDx8a"
+            video="none"
+            code="none"
+          />
+        </Box>
       </Section>
 
       <Section delay={0.2}>
@@ -258,19 +159,19 @@ const Home = () => {
           Education
         </Heading>
         <BioSection>
-          <BioYear>2020.09 - Present</BioYear>
-          M.S./Ph.D., Seoul National University, ECE, advised by {' '}
-          <Link as={NextLink} href="https://3d.snu.ac.kr" passHref scroll={false} target="_blank">
+          <BioYear>2024.09 - Present </BioYear>
+           M.S./Ph.D., Seoul National University, ECE, advised by {' '}
+          <Link as={NextLink} href="https://3d.snu.ac.kr/members/" passHref scroll={false} target="_blank">
             Young Min Kim
           </Link>
         </BioSection>
         <BioSection>
-          <BioYear>2014.03 - 2020.08</BioYear>
-          B.S., Seoul National University, ECE
+          <BioYear>2021.03 - 2024.08</BioYear>
+          B.S., Korea University, Artificial Intelligence (double major)
         </BioSection>
         <BioSection>
-          <BioYear>2011.03 - 2014.02</BioYear>
-          Seoul Science High School
+          <BioYear>2019.03 - 2024.08</BioYear>
+          B.S., Korea University, Mechanical Engineering (double major)
         </BioSection>
       </Section>
 
@@ -279,37 +180,15 @@ const Home = () => {
           Experience
         </Heading>
         <BioSection>
-          <BioYear>2025.06 - 2025.12</BioYear>
-          Research Scientist Intern, {' '}
-          <Link as={NextLink} href="https://about.meta.com/realitylabs/" passHref scroll={false} target="_blank">
-            Meta Reality Labs
-          </Link>
-          , hosted by {' '}
-          <Link as={NextLink} href="https://thodan.github.io/" passHref scroll={false} target="_blank">
-            Tomas Hodan
-          </Link>
-        </BioSection>
-        <BioSection>
-          <BioYear>2023.12 - 2024.03</BioYear>
+          <BioYear>2024.07 - 2025.08</BioYear>
           Research Intern, {' '}
-          <Link as={NextLink} href="https://www.navercloudcorp.com/" passHref scroll={false} target="_blank">
-            NAVER Cloud (CLOVA)
+          <Link as={NextLink} href="https://3d.snu.ac.kr" passHref scroll={false} target="_blank">
+            3D VISION LAB(Seoul National University)
           </Link>
-        </BioSection>
-        <BioSection>
-          <BioYear>2023.05 - 2023.12</BioYear>
-          Visiting Graduate Student, University of California, San Diego, hosted by {' '}
-          <Link as={NextLink} href="https://cseweb.ucsd.edu/~haosu/" passHref scroll={false} target="_blank">
-            Hao Su
+          , advised by {' '}
+          <Link as={NextLink} href="https://3d.snu.ac.kr/members/" passHref scroll={false} target="_blank">
+            Young Min Kim
           </Link>
-        </BioSection>
-        <BioSection>
-          <BioYear>2016.09 - 2018.09</BioYear>
-          ROK Air Force Operations Command (Mandatory Military Service)
-        </BioSection>
-        <BioSection>
-          <BioYear>Reviewer</BioYear>
-          SIGGRAPH, SIGGRAPH Asia, Pacific Graphics, TOG, TVCG, CGF, CVPR, ICCV, ECCV, 3DV, WACV, ACCV, NeurIPS
         </BioSection>
       </Section>
       <LogoBanner />
