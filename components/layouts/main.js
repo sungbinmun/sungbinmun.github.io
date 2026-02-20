@@ -1,19 +1,10 @@
 import Head from 'next/head'
-import dynamic from 'next/dynamic'
 import NavBar from '../navbar'
 import { Box, Container } from '@chakra-ui/react'
 import Footer from '../footer'
-import SceneLoader from '../load_scene'
 import { Analytics } from '@vercel/analytics/react'
 
-const Scene = dynamic(() => import('../scene'), {
-  ssr: false,
-  loading: () => <SceneLoader />
-})
-
 const Main = ({ children, router }) => {
-  const isHome = router?.pathname === '/'
-
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -34,14 +25,7 @@ const Main = ({ children, router }) => {
 
       <NavBar path={router.asPath} />
 
-      <Container maxW="95ch" pt={isHome ? 20 : 14}>
-      {!isHome && (
-        <>
-          <Scene />
-          <Box align="center" h="5em">
-          </Box>
-        </>
-      )}
+      <Container maxW="95ch" pt={20}>
 
         {children}
         <Analytics />
