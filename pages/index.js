@@ -19,7 +19,6 @@ import { IoLogoGithub, IoMailUnread, IoSchool } from 'react-icons/io5'
 import Image from 'next/image'
 // import Script from 'next/script'
 import LogoBanner from '../components/logobanner'
-import thumbProbeOptim from '../public/images/publications/3DiR_teaser.gif'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt', 'style'].includes(prop)
@@ -44,12 +43,11 @@ const Home = () => {
             <Link href="mailto: brian0429@snu.ac.kr" target="_blank">
               <Button
                 size="sm"
-                variant="ghost"
-                colorScheme="teal"
+                variant="soft-outline"
                 leftIcon={<IoMailUnread />}
                 minW="auto"
                 justifyContent="flex-start"
-                px={0}
+                px={3}
               >
                 E-mail
               </Button>
@@ -57,25 +55,23 @@ const Home = () => {
             <Link href="https://github.com/sungbinmun" target="_blank">
               <Button
                 size="sm"
-                variant="ghost"
-                colorScheme="teal"
+                variant="soft-outline"
                 leftIcon={<IoLogoGithub />}
                 minW="auto"
                 justifyContent="flex-start"
-                px={0}
+                px={3}
               >
                 GitHub
               </Button>
             </Link>
-            <Link href="https://scholar.google.com/citations?user=DmPZo4QAAAAJ" target="_blank">
+            <Link href="https://scholar.google.com/citations?user=zHQFSEcAAAAJ&hl=ko&oi=ao" target="_blank">
               <Button
                 size="sm"
-                variant="ghost"
-                colorScheme="teal"
+                variant="soft-outline"
                 leftIcon={<IoSchool />}
                 minW="auto"
                 justifyContent="flex-start"
-                px={0}
+                px={3}
               >
                 Google Scholar
               </Button>
@@ -143,7 +139,7 @@ const Home = () => {
         <Box mt={4}>
           <PubGridItem
             title="3D-aware Disentangled Representation for Compositional Reinforcement Learning"
-            thumbnail={thumbProbeOptim}
+            thumbnail="/images/publications/3DiR_teaser.gif"
             journal="International Conference on Learning Representations (ICLR), 2026"
             project_page="/3DiR_ICLR2026/index.html"
             author={<><b>Sungbin Mun</b>, Younghwan Lee, Cheol-Hui Min, Mineui Hong, Young Min Kim</>}
@@ -158,21 +154,23 @@ const Home = () => {
         <Heading as="h3" variant="section-title">
           Education
         </Heading>
-        <BioSection>
-          <BioYear>2024.09 - Present </BioYear>
-           M.S./Ph.D., Seoul National University, ECE, advised by {' '}
-          <Link as={NextLink} href="https://3d.snu.ac.kr/members/" passHref scroll={false} target="_blank">
-            Young Min Kim
-          </Link>
-        </BioSection>
-        <BioSection>
-          <BioYear>2021.03 - 2024.08</BioYear>
-          B.S., Korea University, Artificial Intelligence (double major)
-        </BioSection>
-        <BioSection>
-          <BioYear>2019.03 - 2024.08</BioYear>
-          B.S., Korea University, Mechanical Engineering (double major)
-        </BioSection>
+        <Box display="flex" flexDirection="column" gap={2.5}>
+          <BioSection>
+            <BioYear>2024.09 - Present </BioYear>
+             M.S./Ph.D., Seoul National University, ECE, advised by {' '}
+            <Link as={NextLink} href="https://3d.snu.ac.kr/members/" passHref scroll={false} target="_blank">
+              Young Min Kim
+            </Link>
+          </BioSection>
+          <BioSection>
+            <BioYear>2021.03 - 2024.08</BioYear>
+            B.S., Korea University, Artificial Intelligence (double major)
+          </BioSection>
+          <BioSection>
+            <BioYear>2019.03 - 2024.08</BioYear>
+            B.S., Korea University, Mechanical Engineering (double major)
+          </BioSection>
+        </Box>
       </Section>
 
       <Section delay={0.2}>
