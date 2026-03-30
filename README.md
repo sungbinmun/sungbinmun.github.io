@@ -1,6 +1,6 @@
 # Personal Homepage
 
-Minimal Next.js homepage + static project page (`public/3DiR_ICLR2026`).
+Minimal Next.js homepage
 
 ## Run
 
