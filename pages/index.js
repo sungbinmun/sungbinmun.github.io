@@ -108,16 +108,19 @@ const Home = () => {
           About me
         </Heading>
         <Paragraph>
-          I&apos;m a PhD student at Seoul National University ECE department, advised by Prof.{' '}
+          I&apos;m a PhD student in the Department of Electrical and Computer Engineering at
+          Seoul National University, advised by Prof.{' '}
           <Link as={NextLink} href="https://3d.snu.ac.kr" passHref scroll={false}>
             Young Min Kim
           </Link>
-          .
-          I obtained my Bacheler&apos;s degree from Korea University.
+          . I received my bachelor&apos;s degrees in Mechanical Engineering and Artificial
+          Intelligence from Korea University.
         </Paragraph>
         <Box height="0.3em"></Box>
         <Paragraph>
-          My research is focused on 3D computer vision and robotics.
+          My research focuses on 3D computer vision and robotics. My goal is to enable robots
+          to understand the 3D world and use that understanding to perform a wide range of
+          everyday tasks that can assist people in daily life.
         </Paragraph>
       </Section>
 
@@ -128,7 +131,7 @@ const Home = () => {
         </Heading>
         <BioSection>
           <BioYear>2026.01</BioYear>
-          My first paper accepted to ICLR 2026.
+          My first paper was accepted to ICLR 2026. See you in Rio! 🇧🇷
         </BioSection>
       </Section>
 
@@ -178,7 +181,7 @@ const Home = () => {
           Experience
         </Heading>
         <BioSection>
-          <BioYear>2024.07 - 2025.08</BioYear>
+          <BioYear>2023.07 - 2024.08</BioYear>
           Research Intern, {' '}
           <Link as={NextLink} href="https://3d.snu.ac.kr" passHref scroll={false} target="_blank">
             3D VISION LAB(Seoul National University)
